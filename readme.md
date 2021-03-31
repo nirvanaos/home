@@ -233,9 +233,9 @@ For porting to a new host, the new Port library has to be created.
 
 ## Current state
 
-Currently implemented the common library (partially, of course), the
+Development is still at the early stage. Currently implemented the common library (partially, of course), the
 memory manager and scheduler. Now I'm working on the IDL compiler.
 
 I'm very interested in the enthusiasts who will help me to develop
-Nirvana. If you want to participate, write me:
+Nirvana. If you want to participate, e-mail me:
 <popov.nirvana@gmail.com>.
