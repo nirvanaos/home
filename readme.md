@@ -2,8 +2,8 @@
 
 ## What is Nirvana
 
-"Nirvana" is a project of the new operating system, based on some new
-principles.
+"Nirvana" is an open-source project of the new operating system, based
+on some new principles.
 
 <div class="note">
 
@@ -120,10 +120,16 @@ platform.
 One of the Nirvana architecture design goals was the software modularity
 with maximal binary reuse. Binary modules (class libraries) may be built
 with different compilers and different programming languages. Binary
-module exports some interfaces defined with IDL. IDL provides standard
-ABI (Application Binary Interface) independent of the particular
-compiler. All compiler-specific things, like the implementation of
-exceptions and virtual tables, are hidden inside the module.
+module exports and imports some interfaces defined with IDL. IDL
+provides standard ABI (Application Binary Interface) independent of the
+particular compiler. All compiler-specific things, like the
+implementation of exceptions and virtual tables, are hidden inside the
+module.
+
+The export and import module metadata contains version information.
+During the module loading, the system checks version compatibility. This
+lets to keep multiple versions of the module and provide backward
+compatibility.
 
 ### Legacy Mode
 
@@ -233,9 +239,11 @@ For porting to a new host, the new Port library has to be created.
 
 ## Current state
 
-Development is still at the early stage. Currently implemented the common library (partially, of course), the
-memory manager and scheduler. Now I'm working on the IDL compiler.
+Development is still at the early stage. Currently implemented the
+common library (partially, of course), the memory manager and scheduler.
+Now I'm working on the IDL compiler. All that you can do currently is
+build and run unit tests.
 
-I'm very interested in the enthusiasts who will help me to develop
-Nirvana. If you want to participate, e-mail me:
-<popov.nirvana@gmail.com>.
+I'm very interested in the enthusiasts who will help me in the
+development. If you want to participate, e-mail me:
+&lt;popov.nirvana@gmail.com&gt;.
