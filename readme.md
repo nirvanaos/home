@@ -239,10 +239,17 @@ For porting to a new host, the new Port library has to be created.
 
 ## Current state
 
-Development is still at the early stage. Currently implemented the
-common library (partially, of course), the memory manager and scheduler.
-Now I'm working on the IDL compiler. All that you can do currently is
-build and run unit tests.
+Development is still at the early stage. Currently are implemented:
+
+-   Common library (partially, of course)
+
+-   Memory manager
+
+-   Scheduler
+
+-   The IDL compiler
+
+All that you can do currently is build and run unit tests.
 
 I'm very interested in the enthusiasts who will help me in the
 development. If you want to participate, e-mail me:
