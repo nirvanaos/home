@@ -249,7 +249,13 @@ Development is still at the early stage. Currently are implemented:
 
 -   The IDL compiler
 
-All that you can do currently is build and run unit tests.
+All that you can do currently is build and run tests.
+
+The main supermodule for building with MS Visual Studio 2019 is
+[here](https://github.com/nirvanaos/nirvana.vc).
+
+Also you can have a look on [IDL compiler front-end
+library](https://github.com/nirvanaos/idlfe).
 
 I'm very interested in the enthusiasts who will help me in the
 development. If you want to participate, e-mail me:
