@@ -101,6 +101,17 @@ Nirvana uses non-preemptive multitasking. When one actor claims a
 processor core for the incoming message processing, it would not be
 preempted until it finished processing the current message.
 
+##### Background Tasks
+
+Of course, there are background tasks, such as database reorganization or
+cryptocurrency mining. Such tasks are executed only when no real-time task
+is scheduled for execution. Background tasks have an infinite timeout
+and may be preempted at any time by the actor's activity or another
+background task.
+
+So, for the background tasks Nirvana uses preemptive multitasking, when realtime
+activity is absent.
+
 ### New Memory Management
 
 All current memory management is based on the two very old functions:
