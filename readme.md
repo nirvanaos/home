@@ -2,8 +2,8 @@
 
 ## What is Nirvana
 
-"Nirvana" is an open-source project of the new operating system, based
-on some new principles.
+"Nirvana" is a research open-source project of the new operating system,
+based on some new principles.
 
 <div class="note">
 
@@ -97,20 +97,10 @@ Now we have a lot of processor cores for one user, and the main issue is
 to distribute the work over these cores. It is an opposite issue and it
 requires the opposite approach.
 
-Nirvana uses non-preemptive multitasking. When one actor claims a
-processor core for the incoming message processing, it would not be
-preempted until it finished processing the current message.
-
-#### Background Tasks
-
-Of course, there are background tasks, such as database reorganization or
-cryptocurrency mining. Such tasks are executed only when no real-time task
-is scheduled for execution. Background tasks have an infinite timeout
-and may be preempted at any time by the actor's activity or another
-background task.
-
-For the background tasks Nirvana uses preemptive multitasking, when realtime
-activity is absent.
+Nirvana uses non-preemptive multitasking for real-time messages. When
+one actor claims a processor core for the incoming message processing,
+it would not be preempted until it finished processing the current
+message or sent a message to another actor.
 
 ### New Memory Management
 
