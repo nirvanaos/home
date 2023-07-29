@@ -30,7 +30,8 @@ call is converted into sending the message. Each incoming call or return
 from an outgoing call is converted into receiving a message.
 
 Each object method described in IDL can be called as usual or called
-asynchronously with sending the call message and receiving the reply message.
+asynchronously with sending the call message and receiving the reply
+message.
 
 So programming for Nirvana does not require changing the programming
 paradigm as for other actor frameworks. You can use OOP paradigm, as you
@@ -76,9 +77,10 @@ interactive system is a real-time system because it has to react to user
 input at an acceptable time. Because of this, Nirvana was designed as a
 real-time system with an accent on the reaction time.
 
-Nirvana core contains two different schedulers: real-time and background.
+Nirvana core contains two different schedulers: real-time and
+background.
 
-#### Real Time Scheduler
+#### Real-Time Scheduler
 
 Messages sent by the actors have deadlines. Queued messages are
 prioritized according to deadlines. In this way, the real-time scheduler
@@ -109,14 +111,15 @@ message or sent a message to another actor.
 
 ### Stateless Objects and Background Scheduler
 
-If an object does not have a state (internal variables), it does not need
-any synchronization. Such objects can process multiple messages simultaneously.
+If an object does not have a state (internal variables), it does not
+need any synchronization. Such objects can process multiple messages
+simultaneously.
 
-If a message processed by a stateless object has infinite deadline, it is
-processed in the background. Background processing is scheduled by the separate
-background scheduler with preemptive multitasking and executed only when some
-processor core is free and no real-time messages in the real-time scheduler
-queue.
+If a message processed by a stateless object has infinite deadline, it
+is processed in the background. Background processing is scheduled by
+the separate background scheduler with preemptive multitasking and
+executed only when some processor core is free and no real-time messages
+in the real-time scheduler queue.
 
 ### New Memory Management
 
@@ -150,33 +153,35 @@ compatibility.
 
 ### Distributed Garbage Collection
 
-CORBA specification has a serious lack - the absence of distributed garbage
-collection.
+CORBA specification has a serious lack - the absence of distributed
+garbage collection.
 
-Nirvana provides a solution for the DGC problem. The main idea was borrowed
-from the DCOM protocol. Unlike DCOM, the programmer can explicitly enable or
-disable the DGC policy for objects at the creation time.
-If DGC policy is not explicitly specified, the system makes the decision by
-default, based on the context. In most cases, it is enough and does not require
-additional effort from a programmer.
+Nirvana provides a solution for the DGC problem. The main idea was
+borrowed from the DCOM protocol. Unlike DCOM, the programmer can
+explicitly enable or disable the DGC policy for objects at the creation
+time. If DGC policy is not explicitly specified, the system makes the
+decision by default, based on the context. In most cases, it is enough
+and does not require additional effort from a programmer.
 
-The distributed garbage collector is also an exported object. Every server
-that participates in the distributed garbage collection needs to export
-a similar object. It is possible to have heterogeneous distributed garbage
-collection by having servers in other platforms and languages export a similar
-distributed garbage collecting object. For the details see NirvanaDGC.idl file.
+The distributed garbage collector is also an exported object. Every
+server that participates in the distributed garbage collection needs to
+export a similar object. It is possible to have heterogeneous
+distributed garbage collection by having servers in other platforms and
+languages export a similar distributed garbage collecting object. For
+the details see NirvanaDGC.idl file.
 
-When Nirvana interacts with other CORBA systems, that do not support DGC,
-it uses the usual CORBA connection-oriented garbage collection strategy:
-when a connection is alive, all objects grabbed by this connection are considered
-as alive.
+When Nirvana interacts with other CORBA systems, that do not support
+DGC, it uses the usual CORBA connection-oriented garbage collection
+strategy: when a connection is alive, all objects grabbed by this
+connection are considered as alive.
 
-To deal with clients that have crashed holding references to objects, the
-Transport Heartbeats are used (see [Fault Tolerant CORBA](https://www.omg.org/spec/FT/1.0/)).
-When a server has not received a ping message after some configurable amount
-of time, the server assumes that the client no longer exists and furthermore
-decrements the reference counts of the objects that the particular client has
-references to.
+To deal with clients that have crashed holding references to objects,
+the Transport Heartbeats are used (see [Fault Tolerant
+CORBA](https://www.omg.org/spec/FT/1.0/)). When a server has not
+received a ping message after some configurable amount of time, the
+server assumes that the client no longer exists and furthermore
+decrements the reference counts of the objects that the particular
+client has references to.
 
 ### Legacy Mode
 
@@ -288,13 +293,16 @@ For porting to a new host, the new Port library has to be created.
 
 Development is still at the pre-MVP stage. Currently are implemented:
 
--   Common library
+-   Runtime library
 
--   Core
+-   Memory manager
 
--   Windows host port library
+-   Scheduler
 
 -   The IDL compiler
+
+-   Object-oriented access to file system as a part of the CORBA Naming
+    Service.
 
 All that you can do currently is build and run tests.
 
