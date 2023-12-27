@@ -26,12 +26,14 @@ Nirvana implements the actor model implicitly. A programmer just writes
 code as usual C++ classes and describes the interfaces in IDL (Interface
 Definition Language). IDL compiler creates a proxy code that wraps the
 object interface and converts the object into the actor. Each outgoing
-call is converted into sending the message. Each incoming call or return
-from an outgoing call is converted into receiving a message.
+call to other object is internally converted into sending the request
+message and receiving the reply message. Each incoming call from other
+object is converted into receiving the request message and sending the
+reply message.
 
 Each object method described in IDL can be called as usual or called
-asynchronously with sending the call message and receiving the reply
-message.
+asynchronously via asynchronous method invocation (AMI) mechanism
+provided by system.
 
 So programming for Nirvana does not require changing the programming
 paradigm as for other actor frameworks. You can use OOP paradigm, as you
