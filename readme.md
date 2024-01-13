@@ -192,16 +192,14 @@ and you do not want to convert it to Nirvana class, you might just
 compile it as usually and run in Nirvana legacy mode.
 
 Legacy mode is a special separate environment that lets to run legacy
-applications in a usual way. Legacy applications may create std::thread
-objects, use std::mutex etc. Legacy applications can not create Nirvana
+applications in a usual way. Legacy applications can not create Nirvana
 objects directly. But legacy applications can create objects via object
 factories and call the object's operations.
 
-All threads of the legacy application have background priority and
-execute only when there are processor cores free from performing the
-Nirvana requests. Legacy mode provides preemptive multitasking. If
-Nirvana runs over a host OS, the background threads have default
-priority for this OS.
+Legacy application have background priority and execute only when there
+are processor cores free from performing the Nirvana requests. Legacy
+mode provides preemptive multitasking. If Nirvana runs over a host OS,
+the background threads have default priority for this OS.
 
 ## Philosophy
 
@@ -295,16 +293,16 @@ For porting to a new host, the new Port library has to be created.
 
 Development is still at the pre-MVP stage. Currently are implemented:
 
--   Runtime library
+- Runtime library
 
--   Memory manager
+- Memory manager
 
--   Scheduler
+- Scheduler
 
--   The IDL compiler
+- The IDL compiler
 
--   Object-oriented access to file system as a part of the CORBA Naming
-    Service.
+- Object-oriented access to file system as a part of the CORBA Naming
+  Service.
 
 All that you can do currently is build and run tests.
 
@@ -316,4 +314,4 @@ library](https://github.com/nirvanaos/idlfe).
 
 I'm very interested in the enthusiasts who will help me in the
 development. If you want to participate, e-mail me:
-&lt;popov.nirvana@gmail.com&gt;.
+\<popov.nirvana@gmail.com\>.
