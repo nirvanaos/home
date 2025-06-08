@@ -22,6 +22,10 @@ Development is still at the pre-MVP stage. Currently are implemented:
 - Object-oriented access to file system as a part of the CORBA Naming
   Service.
 
+- POSIX subsystem
+
+- C runtime library
+
 All that you can do currently is build and run tests.
 
 The main supermodule for building with MS Visual Studio 2022/2019 is
