@@ -26,6 +26,12 @@ Development is still at the pre-MVP stage. Currently are implemented:
 
 - C runtime library
 
+- Database connectivity API
+
+- SQLite
+
+- Package manager
+
 All that you can do currently is build and run tests.
 
 The main supermodule for building with MS Visual Studio 2022/2019 is
